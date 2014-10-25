@@ -65,6 +65,34 @@ char *list_get (list *l, int i)
     return val;
 }
 
+// Insert an item
+void list_insert (list *l, int i, char *val)
+{
+    if (i == 0 && (int)(l->val) == 0) {
+        list_add(l, val);
+        return;
+    }
+
+    if (i > 0) {
+        list *new = list_new();
+        list_add(new, val);
+
+        new->next = index(l, i);
+        index(l, i - 1)->next = new;
+    } else {
+        list *next = list_new();
+        list_add(next, l->val);
+        next->next = l->next;
+
+        free(l->val);
+        free(l);
+
+        *l = *(list_new());
+        list_add(l, val);
+        l->next = next;
+    }
+}
+
 // Append an item
 void list_add (list *l, char *val)
 {
@@ -84,6 +112,11 @@ void list_add (list *l, char *val)
 // Set an item at an index
 void list_set (list *l, int i, char *val)
 {
+    if (i == 0 && (int)(l->val) == 0) {
+        list_add(l, val);
+        return;
+    }
+
     l = index(l, i);
     free(l->val);
     l->val = malloc(sizeof(val));

@@ -42,9 +42,19 @@ int main (int argc, char *argv[])
     list *sub = list_range(l, 1, list_len(l));
     printf("should be 'foo bar': ");
     for (int i = 0; i < list_len(sub); i++) {
-	char *val = list_get(sub, i);
-	printf("%s ", val);
-	free(val);
+        char *val = list_get(sub, i);
+        printf("%s ", val);
+        free(val);
+    }
+    list_free(sub);
+    printf("\n");
+
+    list_insert(l, 0, "hello");
+    printf("should be 'hello world foo bar': ");
+    for (int i = 0; i < list_len(l); i++) {
+        char *val = list_get(l, i);
+        printf("%s ", val);
+        free(val);
     }
     printf("\n");
 

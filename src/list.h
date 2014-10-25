@@ -12,6 +12,7 @@ typedef struct list_node {
 list *list_new ();
 list *list_range (list *l, int beg, int end);
 char *list_get (list *l, int i);
+void list_insert (list *l, int i, char *val);
 void list_add (list *l, char *val);
 void list_set (list *l, int i, char *val);
 void list_remove (list *l, int i);

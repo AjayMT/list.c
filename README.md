@@ -54,6 +54,9 @@ Append `val` to `l`.
 ### void list_set(list *l, int i, char *val)
 Set the value at `i` to `val` in `l`.
 
+### void list_insert(list *l, int i, char *val)
+Insert `val` into `l` at index `i`.
+
 ### void list_remove(list *l, int i)
 Remove item at `i` in `l`.
 
