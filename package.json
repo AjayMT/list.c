@@ -1,0 +1,10 @@
+
+{
+  "name": "list",
+  "description": "linked list",
+  "version": "0.0.1",
+  "src": ["src/list.h", "src/list.c"],
+  "repo": "AjayMT/list.c",
+  "license": "MIT",
+  "keywords": ["utility", "list", "linked", "array"]
+}
