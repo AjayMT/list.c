@@ -42,6 +42,9 @@ Or `make` it and use the `list.o` file.
 ### list *list_new()
 Create a new list. This function returns a pointer to the list.
 
+### list *list_range(list *l, int beg, int end)
+Return a new list containing items from `beg` to `end` (excluding `end`) in `l`.
+
 ### char *list_get(list *l, int i)
 Return the value at `i` in `l`. You should `free` the value you get.
 
@@ -50,6 +53,15 @@ Append `val` to `l`.
 
 ### void list_set(list *l, int i, char *val)
 Set the value at `i` to `val` in `l`.
+
+### void list_remove(list *l, int i)
+Remove item at `i` in `l`.
+
+### int list_len(list *l)
+Return the number of items in `l`.
+
+### int list_index_of(list *l, char *val)
+Return the index of `val` in `l`.
 
 ### void list_free(list *l)
 Free everything in `l`.
