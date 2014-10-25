@@ -1,5 +1,7 @@
 
 # list.c
+[![Build Status](https://travis-ci.org/AjayMT/list.c.svg)](https://travis-ci.org/AjayMT/list.c)
+
 list.c is an implementation of a linked list in C.
 
 Example:
